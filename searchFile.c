@@ -38,7 +38,6 @@ void recursiveSearch(const wchar_t* dirPath, unsigned int indent, wchar_t* searc
 {
     WDIR* pdr;
     struct wdirent* pde;
-    //unsigned int counter;
 
     pthread_mutex_lock(&lock);
     if (fileFound == 1) 
@@ -65,10 +64,8 @@ void recursiveSearch(const wchar_t* dirPath, unsigned int indent, wchar_t* searc
             {
                 pthread_mutex_lock(&lock);
                 fileFound = 1;
-                //wchar_t toPrint[PATH_MAX];
                 swprintf(searchedFilePath, sizeof(searchedFilePath), L"%ls", pdr->patt);
                 swprintf(searchedFilePath + wcslen(pdr->patt) - 1, sizeof(searchedFilePath) - wcslen(pdr->patt) - 1,L"%ls", pde->d_name);
-                //printf("\n%ls\n", toPrint);
                 pthread_mutex_unlock(&lock);
                 goto Cleanup;
             }
@@ -135,10 +132,8 @@ wchar_t* searchFileMain(wchar_t* fileToFind)
             {
                 pthread_mutex_lock(&lock);
                 fileFound = 1;
-                //wchar_t toPrint[PATH_MAX];
                 swprintf(searchedFilePath, sizeof(searchedFilePath), L"%ls", pdr->patt);
                 swprintf(searchedFilePath + wcslen(pdr->patt) - 1, sizeof(searchedFilePath) - wcslen(pdr->patt) - 1, L"%ls", pde->d_name);
-                //printf("\n%ls\n", toPrint);
                 pthread_mutex_unlock(&lock);
                 goto Cleanup;
             }
