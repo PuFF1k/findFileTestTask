@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     Copyright 2017, Data61
+     Commonwealth Scientific and Industrial Research Organisation (CSIRO)
+     ABN 41 687 119 230.
+     This software may be distributed and modified according to the terms of
+     the BSD 2-Clause license. Note that NO WARRANTY is provided.
+     See "LICENSE_BSD2.txt" for details.
+     @TAG(DATA61_BSD)
+-->
+<manifest>
+
+<!-- We assume this manifest is in the same path as all the libraries. If you are
+     copying this manifest as a template then you probably want the fetch path
+     for this to be '../seL4' instead of '.'
+     note: this manifest is not intended to be used directly, but should be included
+     into a manifest that also declares a kernel -->
+
+<remote name="PuFF1k"
+fetch="."
+/>
+
+<remote fetch="../findFileTestTask" name="Task"/>
+<remote fetch="https://github.com/tronkko" name="dirent" />
+
+<default revision="master"
+remote="PuFF1k"
+/>
+
+
+<project name="findFileTestTask.git" path="main/findFileTestTask"/>
+
+<project name="dirent" path="tools/dirent" revision="master" remote="dirent"/>
+
+</manifest>
