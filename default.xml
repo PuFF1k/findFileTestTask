@@ -23,5 +23,7 @@ remote="PuFF1k"
 
 <project name="findFileTestTask.git" path="main"/>
 <project remote="dirent" name="dirent.git" path="main/dirent"/>
+  <linkfile dest="main/dirent.h" src="include/dirent.h"/>
+</project>
 
 </manifest>
