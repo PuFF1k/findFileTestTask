@@ -20,8 +20,6 @@
 <remote fetch="../findFileTestTask" name="Task"/>
 <remote fetch="https://github.com/tronkko" name="dirent" />
 
-<default remote="PuFF1k" revision="master"/>
-
 
 <project name="findFileTestTask.git" path="main/findFileTestTask"/>
 
